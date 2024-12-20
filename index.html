@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <meta name="description" content="Tienda de productos comestibles">
+         <script src="https://kit.fontawesome.com/6534783feb.js" crossorigin="anonymous"></script>
+         <title>Proyecto Tienda</title>
+         <link rel="stylesheet" href="./css/index.css">
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+         <link rel="shortcut icon" href="./Imagenes/Logo_Editable_LosChamos_-01 favicon.png" type="image/x-icon">
+    </head>
+    <body>
+
+        <header>
+           
+            <h1> Almacén de Productos </h1>
+            
+        </header>
+        <nav>
+            <ul>
+                <li> <a href="#">Inicio</a></li>
+                <li> <a href="./reseña.html">Reseña</a></li>
+                <li> <a href="./contacto.html">Contacto</a></li>
+                <li> <a href="./carrito.html">Carrito<i class="fa-solid fa-cart-shopping"></i></a></li>  
+            </ul>
+            
+        </nav>
+
+        <main>
+          
+            <!-- Sección para destacar productos -->
+
+            <section id="productos">
+
+                <h2>Productos Destacados</h2>
+
+                <div class="productos-container">
+                    <div class="card">
+                        <img src="./Imagenes/Aceite.jpg" class="card-img-top" alt="Aceite">
+                        <div class="card-body">
+                            <h5 class="card-title">Aceite</h5>
+                            <p class="card-text">Aceite de girasol 1Lt.</p>
+                            <p> $1500 </p>
+                            <button>Agregar al carrito</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="Imagenes/Arroz1.jpg" class="card-img-top" alt="Arroz">
+                        <div class="card-body">
+                            <h5 class="card-title">Arroz</h5>
+                            <p class="card-text"> Arroz blanco fino de 1 Kg.</p>
+                            <p>$1230</p>
+                            <button>Agregar al carrito</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="Imagenes/azucar1.jpg" class="card-img-top" alt="Azúcar">
+                        <div class="card-body">
+                            <h5 class="card-title">Azúcar</h5>
+                            <p class="card-text">Azúcar de 1Kg Ledesma Clasica</p>
+                            <p>$1000</p>
+                            <button>Agregar al carrito</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="Imagenes/Fideos.jpg" class="card-img-top" alt="Fideos">
+                        <div class="card-body">
+                            <h5 class="card-title">Fideos</h5>
+                            <p class="card-text">Spaghetti de 500gr</p>
+                            <p> $1100 </p>
+                            <button>Agregar al carrito</button>
+                        </div>
+                    </div>
+                    <!-- Agregar más productos aquí -->
+                    <div class="card">
+                        <img src="Imagenes/yerba.jpg" class="card-img-top" alt="Yerba de 1kg">
+                        <div class="card-body">
+                            <h5 class="card-title">Yerba</h5>
+                            <p class="card-text">Yerba de 1Kg.</p>
+                            <p> $1850 </p>
+                            <button>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        
+
+            <!-- Sección del carrito-->
+            <section id="carrito">
+                <p>Aún no has añadido productos a tu carrito.</p>
+                <br>
+                <button id="vaciar-carrito">Vaciar Carrito</button>
+                <div id="mensaje-carrito" style="display: none;"></div>
+            </section>
+
+        </main>
+
+        <footer>
+            
+            <p>© 2024 Mi Tienda en Línea. Todos los derechos reservados.</p>
+            <nav>
+                <ul>
+                    <li><a href="#privacidad">Política de Privacidad</a></li>
+                    <li><a href="#terminos">Términos y Condiciones</a></li>
+                </ul>
+            </nav>
+            <script src="./js/index.js"></script>
+            
+        </footer>
+        
+      
+
+    </body>
+</html>

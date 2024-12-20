@@ -1,0 +1,406 @@
+
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0 ;
+}
+
+/* Encabezado y navegación */
+header {
+    background-color: #FF8000; /* Color de respaldo */
+    background-image: url('../Imagenes/Fondo1.png'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Para que la imagen cubra todo el ancho del header */
+    background-position: center; /* Centra la imagen en el header */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+header h1 {
+    font-size: 35px;
+    color: #0A0A2A;
+    text-decoration: underline;
+    font-style: normal;
+    padding: 10px;
+    font-family: "Outfit", sans-serif;
+    
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #0A0A2A;
+    min-height: 40px; /* Altura mínima */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    
+    
+}
+
+nav ul li {
+   
+    display: inline;
+   
+}
+
+nav ul li a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-style: italic;
+    text-align: center;
+    font-family: "Outfit", sans-serif
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+   color: #F0B385;
+}
+
+main {
+    padding: 20px;
+    flex: 1;
+    min-height: 100vh;
+    
+    
+}
+
+  /* Estilos de productos */
+#productos {
+    margin-bottom: 50px;
+}
+
+.productos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    
+}
+ #productos h2 {
+
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    padding: 10px;
+    font-family: "Outfit", sans-serif
+    
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(25% - 20px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.card img {
+    max-width: 70%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    
+}
+
+.card h5 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-family: "Outfit", sans-serif
+}
+
+.card p {
+    margin-bottom: 15px;
+    font-family: "Outfit", sans-serif
+}
+
+button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: "Outfit", sans-serif
+   }
+
+   button:hover {
+    background-color: #218838;
+   }
+
+/* Responsivo para tarjetas de productos */
+
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px); 
+    }
+}
+
+@media (max-width: 500px) {
+    .card {
+        width: 100%; 
+    }
+}
+
+@media (max-width:600px) {
+    .formulario { background: #f79c56;
+        border-radius: 3px;
+
+    }
+    
+}
+
+@media (max-width:600px) {
+    .carrito { background: #f79c56;
+        border-radius: 3px;
+
+    }
+    
+}
+
+
+/* Estilos de Reseñas */
+#reseñas {
+    margin-bottom: 50px;
+}
+
+.reseñas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    
+}
+
+.reseña {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: "Outfit", sans-serif
+}
+
+.reseña h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    font-family: "Outfit", sans-serif
+}
+
+.reseña p {
+    font-size: 0.95em;
+    color: #666;
+    font-family: "Outfit", sans-serif
+}
+
+/* Carrito */
+
+#carrito {
+   
+    margin: 20px;
+    text-align: left;
+    max-width: 800px;
+    padding: 10px;
+    font-family: "Outfit", sans-serif;
+    }
+
+   #carrito h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: "Outfit", sans-serif;
+    margin-top: 40px ; 
+    
+   }
+
+   table {
+    width: 80%;
+    border-collapse: collapse; /* Elimina espacios entre bordes */
+    font-family: "Outfit", sans-serif;
+}
+
+th, td {
+    padding: 10px 20px; /* Espacio interno (arriba/abajo 10px, izquierda/derecha 20px) */
+    text-align: center; /* Centra el contenido */
+}
+
+th {
+    background-color: #f4f4f4; /* Color de fondo para encabezados */
+    font-weight: bold;
+}
+
+td {
+    border-bottom: 1px solid #ddd; /* Línea divisoria entre filas */
+}
+#total-pagar {
+margin-top: 10px; 
+font-size: 1.2em; 
+font-weight: bold;
+font-family: "Outfit", sans-serif;
+
+}
+
+.boton-modificar {
+    font-size: 12px;       /* Hace el texto más pequeño */
+    padding: 4px 8px;     /* Reduce el tamaño del botón */
+    border: none; /* Opcional: agrega un borde */
+    background-color: #28a745; /* Fondo claro */
+    cursor: pointer;      /* Cambia el cursor al pasar sobre el botón */
+}
+
+.boton-modificar:hover {
+    background-color: #ddd; /* Cambia el color del fondo al pasar el cursor */
+}
+
+.acciones-carrito {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.acciones-carrito button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#seguir-comprando {
+    background-color: #28a745;
+    color: white;
+}
+
+#seguir-comprando:hover {
+    background-color: #45a049;
+}
+
+#finalizar-compra {
+    background-color: #f44336;
+    color: white;
+}
+
+#finalizar-compra:hover {
+    background-color: #e53935;
+}
+
+#mensaje-carrito {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    color: #0A0A2A;
+    border: 2px solid #FF8000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    z-index: 1000;
+}   
+
+/* Estilos del pie de página */
+footer {
+    text-align: center;
+    padding: 20px;
+    background:#0A0A2A;
+    color: #fff;
+    font-family: "Outfit", sans-serif
+}
+
+footer nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+footer nav ul li {
+    margin: 0 15px;
+}
+
+footer nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+/*Formulario contacto*/
+.content {
+    background:#f4f4f4;
+    position: relative;
+    z-index: 2;
+    color: #0A0A2A;
+    text-align: center;
+    padding: 20px;
+    max-width: 550px;
+    border-radius: 5px;
+	border:1px solid #FF8000;
+    font-family: "Outfit", sans-serif;
+    margin: 20px auto;
+
+ 
+
+}
+
+
+.formulario {
+   display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /*width: 500px;*/
+	margin: 20px auto;
+	padding: 20px;
+    
+}
+
+.formulario label {
+    text-align: left;
+}
+
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario textarea {
+	width: 100%;
+	padding: 20px;
+	margin-bottom: 20px;
+	border-radius: 3px;
+	border:1px solid #0A0A2A;
+	font-size: 16px;
+	font-family: "Outfit", sans-serif;
+}
+
+.formulario button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.formulario button:hover {
+    background-color: #45a049;
+}
