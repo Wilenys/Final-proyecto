@@ -177,7 +177,7 @@ button {
 }
 
 @media (max-width:600px) {
-    .carrito { background: #f79c56;
+    .carrito { border-color: #f79c56;
         border-radius: 3px;
 
     }
@@ -224,7 +224,7 @@ button {
    
     margin: 20px;
     text-align: left;
-    max-width: 800px;
+    /*max-width: 800px;*/
     padding: 10px;
     font-family: "Outfit", sans-serif;
     }
