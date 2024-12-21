@@ -5,9 +5,10 @@ let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 document.addEventListener('DOMContentLoaded', () => {
     actualizarCarritoUI();
     agregarEventosBotones();
-    agregarEventoVaciarCarrito();
+    agregarEventoVaciarCarrito();   
+    
 });
-
+ 
 // Productos disponibles
 const productos = [
     { id: 1, nombre: "Aceite", precio: 1500 },
