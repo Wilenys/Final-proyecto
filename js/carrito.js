@@ -3,6 +3,7 @@ let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 // Ejecutar al cargar la página carrito.html
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('Contenido del carrito al cargar carrito.html:', carrito); // Mostrar el carrito
     cargarCarrito();
     agregarEventoVaciarCarrito();
     agregarEventosBotones();
@@ -17,12 +18,15 @@ function cargarCarrito() {
     let total = 0;
 
     carrito.forEach((item, index) => {
-        const subtotal = item.precio * item.cantidad;
+        const subtotal = item.price * item.cantidad;
         total += subtotal; // Sumar al total
 
         const row = `
             <tr>
-                <td>${item.nombre}</td>
+                <td>
+                    <img src="${item.thumbnail}" alt="${item.title}" class="img-producto" />
+                    ${item.title}
+                </td>
                 <td>
                     <button class="boton-modificar" onclick="modificarCantidad(${index}, -1)">-</button>
                     ${item.cantidad}
@@ -30,7 +34,7 @@ function cargarCarrito() {
                 </td>
                 <td>$${subtotal.toFixed(2)}</td>
                 <td>
-                    <button onclick="eliminarProducto(${index})">Eliminar</button>
+                    <button class="btn-eliminar" onclick="eliminarProducto(${index})">Eliminar</button>
                 </td>
             </tr>
         `;
@@ -61,9 +65,10 @@ function modificarCantidad(indice, cambio) {
     cargarCarrito();
 }
 
-// Eliminar producto restando 1 (Botón "Eliminar")
+// Eliminar producto directamente (Botón "Eliminar")
 function eliminarProducto(indice) {
-    modificarCantidad(indice, -1);
+    carrito.splice(indice, 1);
+    cargarCarrito();
 }
 
 // Vaciar todo el carrito
@@ -76,7 +81,7 @@ function agregarEventoVaciarCarrito() {
     });
 }
 
-// Función para agregar eventos a los botones
+// Agregar eventos a los botones de acción
 function agregarEventosBotones() {
     // Botón de seguir comprando
     const botonSeguirComprando = document.querySelector('#seguir-comprando');
@@ -87,9 +92,14 @@ function agregarEventosBotones() {
     // Botón de finalizar compra
     const botonFinalizarCompra = document.querySelector('#finalizar-compra');
     botonFinalizarCompra.addEventListener('click', () => {
+        if (carrito.length === 0) {
+            Swal.fire('Tu carrito está vacío', 'Agrega productos antes de finalizar la compra.', 'error');
+            return;
+        }
+
         Swal.fire({
             title: '¿Estás seguro de que deseas finalizar la compra?',
-            text: "¡No podrás modificar el carrito después de esto!",
+            text: `El total es $${carrito.reduce((acc, item) => acc + item.price * item.cantidad, 0).toFixed(2)}`,
             icon: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Sí, finalizar',
@@ -98,14 +108,14 @@ function agregarEventosBotones() {
             if (result.isConfirmed) {
                 Swal.fire(
                     'Compra finalizada!',
-                    'Tu compra ha sido procesada.',
+                    'Gracias por tu compra. Recibirás un correo de confirmación.',
                     'success'
                 );
-                // Aquí podrías redirigir a una página de confirmación o vaciar el carrito
                 carrito = []; // Vaciar el carrito
                 cargarCarrito(); // Recargar la tabla con el carrito vacío
             }
         });
     });
 }
+
 
