@@ -176,12 +176,65 @@ button {
     
 }
 
-@media (max-width:700px) {
-    .carrito { 
-        border-radius: 3px;
+/* Media Queries para Responsividad */
 
+/* Para pantallas de tamaño medio, como tablets */
+@media (max-width: 768px) {
+    .carrito table {
+        font-size: 14px;
     }
-    
+
+    .carrito th, .carrito td {
+        padding: 8px;
+    }
+
+    #total-pagar {
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .acciones-carrito {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .acciones-carrito button {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* Para pantallas de tamaño pequeño, como móviles */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .carrito table {
+        font-size: 12px;
+    }
+
+    .carrito th, .carrito td {
+        padding: 6px;
+    }
+
+    .acciones-carrito {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .acciones-carrito button {
+        width: 100%;
+        margin: 10px 0;
+    }
 }
 
 
@@ -404,3 +457,4 @@ footer nav ul li a {
 .formulario button:hover {
     background-color: #45a049;
 }
+
